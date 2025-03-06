@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Kalkulator Berbasis Web</title>
+    <!-- Link untuk menghubungkan css ke file index.html -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="py-3 absolute w-full text-center">
+    <h1 class="font-bold text-lg sm:text-xl md:text-2xl lg:3xl tracking-wider">Aplikasi Kalkulator</h1>
+</header>
+
+<!-- Konten Utama -->   
+<main class="min-h-screen flex justify-center items-center flex-col pt-10 lg:pt-20">
+    <div class="flex lg:gap-10">
+        <div id="calcLayout" class="container border border-slate-400 border-solid max-w-64 p-2 rounded-xl shadow-lg shadow-slate-400 scale-90 lg:scale-110 flex-none">
+            <button class="btn-history sm:hidden" onclick="openHistoryPhone()">History</button>
+            <button class="btn-history hidden sm:block" onclick="openHistory()">History</button>
+            <div id="resultBox" class="block border-y border-slate-400 border-solid w-60 p-2 text-right text-3xl overflow-x-auto whitespace-nowrap">0</div>
+            <div class="grid grid-cols-4 gap-2 mt-4">
+                <button class="btn-numbers order-last" onclick="inputs(1)">1</button>
+                <button class="btn-numbers order-last" onclick="inputs(2)">2</button>
+                <button class="btn-numbers order-last" onclick="inputs(3)">3</button>
+                <button class="btn-numbers" onclick="inputs(4)">4</button>
+                <button class="btn-numbers" onclick="inputs(5)">5</button>
+                <button class="btn-numbers" onclick="inputs(6)">6</button>
+                <button class="btn-numbers order-first" onclick="inputs(7)">7</button>
+                <button class="btn-numbers order-first" onclick="inputs(8)">8</button>
+                <button class="btn-numbers order-first" onclick="inputs(9)">9</button>
+    
+                <button class="btn-operators order-first" onclick="inputs('+')">+</button>
+                <button class="btn-operators" onclick="inputs('-')">-</button>
+                <button id="times" class="btn-operators order-last" onclick="inputs('&times;')">&times;</button>
+                
+                <div class="grid grid-cols-subgrid gap-2 col-span-4 order-last">
+                    <button class="btn-clear" onclick="clearBox()">C</button>
+                    <button class="btn-numbers" onclick="inputs(0)">0</button>
+                    <button class="btn-numbers" onclick="inputs('.')">.</button>
+                    <button id="div" class="btn-operators" onclick="inputs('&div;')">&div;</button>
+                    <button class="btn-calculate" onclick="calculate()">=</button>
+                    <button class="btn-operators" onclick="inputs('(')">(</button>
+                    <button class="btn-operators" onclick="inputs(')')">)</button>
+                    <button class="btn-operators order-last font-normal" onclick="backspace()">&#9003;</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="historyLayout" class="container border border-slate-400 p-2 rounded-xl w-64 h-96 hidden scale-90 shadow-lg shadow-slate-400 sm:h-auto md:h-auto lg:w-72 lg:scale-110">
+            <div class="text-right p-3 border-b border-slate-400">
+                <div class="btn-close sm:hidden" onclick="closeHistoryPhone()">&laquo; Back</div>
+                <div class="btn-close hidden sm:block" onclick="closeHistory()">X</div>
+            </div>
+            <div id="history" class="border-b h-[21rem] overflow-y-auto"></div>
+        </div>
+    </div>
+    
+    <!-- Hak cipta -->
+    <p class="text-sm md:text-base lg:mt-10">&copy; 2025 | Bebi Ahmad Janlinov | XII-RPL</p>
+
+</main>
+
+<!-- Tag script untuk menghubungkan js ke file index.html -->
+<script src="js/script.js"></script>
+</body>
+</html>

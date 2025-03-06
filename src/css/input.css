@@ -1,0 +1,25 @@
+/* Fungsi tailwind yang dituliskan berdasarkan postcss  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-numbers {
+        @apply border border-black border-solid p-3 rounded-xl hover:bg-gray-300;
+    }
+    .btn-history {
+        @apply mb-2 p-2 bg-yellow-400 text-white font-semibold text-sm rounded-sm hover:bg-yellow-500 active:bg-yellow-700;
+    }
+    .btn-operators {
+        @apply p-3 rounded-xl bg-blue-700 text-white font-bold text-xl hover:bg-blue-600;
+    }
+    .btn-close {
+        @apply text-2xl font-semibold hover:text-gray-600 hover:cursor-pointer active:text-gray-700;
+    }
+    .btn-clear {
+        @apply p-3 rounded-xl bg-red-500 text-white font-bold text-xl hover:bg-red-600;
+    }
+    .btn-calculate {
+        @apply p-3 rounded-xl bg-lime-500 font-bold text-white text-xl hover:bg-lime-400;
+    }
+}
